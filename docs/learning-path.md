@@ -207,7 +207,7 @@ Some sites (like Twitter) don't expose usable APIs and embed data via hidden XHR
 - navigate:                      # 2. Trigger the page load (API calls fire)
     url: https://x.com/search?q=${{ args.query }}
 - evaluate: |                    # 3. Harvest the captured API responses
-    window.__autocli_intercepted  
+    window.__autocli_intercepted
 ```
 
 **Why intercept first, navigate second?** The interceptor must be installed *before* the page loads, otherwise the API calls happen during load and are missed. It's like setting up a camera before the action.
